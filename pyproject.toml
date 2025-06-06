@@ -1,0 +1,56 @@
+[project]
+name = "search-tool"
+version = "0.1.0"
+description = "Tool and library for searching the web and return results"
+authors = [
+    {name = "Wensheng Wang",email = "wenshengwang@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "playwright (>=1.52.0,<2.0.0)",
+    "pydantic (>=2.11.4,<3.0.0)"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "black>=22.0.0",
+    "flake8>=4.0.0",
+    "mypy>=0.950",
+]
+
+[project.scripts]
+search-tool = "search_tool.cli:main"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "search-tool"
+version = "0.1.0"
+description = "Tool and library for searching the web and return results"
+authors = ["Wensheng Wang <wenshengwang@gmail.com>"]
+readme = "README.md"
+packages = [{include = "search_tool"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.0.0"
+black = "^22.0.0"
+flake8 = "^4.0.0"
+mypy = "^0.950"
+
+[tool.mypy]
+python_version = "3.11"
+files = "search_tool/"
+mypy_path = "$MYPY_CONFIG_FILE_DIR/search_tool"
+warn_return_any = true
+warn_unused_configs = true
+
+[tool.black]
+skip-string-normalization = true
+line-length = 120
