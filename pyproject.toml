@@ -1,6 +1,6 @@
 [project]
 name = "search-tool"
-version = "0.1.0"
+version = "0.1.1"
 description = "Tool and library for searching the web and return results"
 authors = [
     {name = "Wensheng Wang",email = "wenshengwang@gmail.com"}
