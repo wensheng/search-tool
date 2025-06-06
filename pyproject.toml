@@ -23,6 +23,12 @@ dev = [
 [project.scripts]
 search-tool = "search_tool.cli:main"
 
+[project.urls]
+Homepage = "https://github.com/wensheng/search-tool"
+Repository = "https://github.com/wensheng/search-tool.git"
+#Issues = "https://github.com/wensheng/search-tool/issues"
+#Changelog = "https://github.com/wensheng/search-tool/blob/master/CHANGELOG.md"
+
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
