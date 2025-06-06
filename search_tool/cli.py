@@ -15,13 +15,13 @@ async def run_search():
     parser.add_argument(
         '--engine',
         '-e',
-        choices=['google', 'ddg', 'brave'],
+        choices=['google', 'duckduckgo', 'ddg', 'brave'],
         default='google',
         help='The search engine to use (google, ddg, brave).',
     )
     parser.add_argument('query', nargs='+', help='The search query.')
     parser.add_argument(
-        '--num-results', type=int, default=10, help='Number of results to fetch.'
+        '--num-results', '-n', type=int, default=10, help='Number of results to fetch.'
     )
     parser.add_argument(
         '--headless',
@@ -33,6 +33,7 @@ async def run_search():
     args = parser.parse_args()
 
     engine_name_str = args.engine.lower()
+    engine_name_str = engine_name_str.replace('ddg', 'duckduckgo')
     search_query = ' '.join(args.query)
 
     try:
